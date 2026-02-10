@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion';
 import CodeSnippet from './CodeSnippet';
+import BackgroundBlobs from './BackgroundBlobs';
 
 export default function Header() {
   return (
-    <header className="relative bg-hero-pattern bg-cover bg-center bg-no-repeat min-h-screen">
-      <div className="absolute inset-0 bg-black/80"></div>
+    <header className="relative bg-zinc-950 min-h-screen overflow-hidden">
+      <BackgroundBlobs />
 
       <div className="relative z-10 flex flex-col [@media(min-width:1085px)]:flex-row-reverse items-center justify-center min-h-screen max-w-7xl mx-auto w-full px-6 gap-12 [@media(min-width:1085px)]:gap-24">
         <motion.div
