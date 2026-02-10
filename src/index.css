@@ -12,9 +12,13 @@
   /* Colors & Gradients */
   --color-brand-primary: #00baff;
   --color-brand-secondary: #8a3ffc;
+  --color-subheading: #a1a1a1;
   --background-image-hero-gradient: linear-gradient(
     to right,
     var(--color-brand-primary),
     var(--color-brand-secondary)
   );
+
+  /* Hero Background */
+  --background-image-hero-pattern: url('./assets/hero-bg.png');
 }
