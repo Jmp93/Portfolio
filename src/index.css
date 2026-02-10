@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  /* Font Families */
+  --font-inter: 'Inter', sans-serif;
+  --font-space: 'Space Grotesk', sans-serif;
+
+  /* Global Default */
+  --default-font-family: var(--font-inter);
+
+  /* Colors & Gradients */
+  --color-brand-primary: #00baff;
+  --color-brand-secondary: #8a3ffc;
+  --background-image-hero-gradient: linear-gradient(
+    to right,
+    var(--color-brand-primary),
+    var(--color-brand-secondary)
+  );
+}
