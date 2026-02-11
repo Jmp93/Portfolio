@@ -84,6 +84,7 @@ export default function Navbar() {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="text-white p-2 cursor-pointer"
+            aria-label="Open navigation menu"
           >
             <div className="w-6 h-5 flex flex-col justify-between items-end">
               <span

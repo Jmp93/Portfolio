@@ -7,7 +7,9 @@ function App() {
     <>
       <Navbar />
       <Header />
-      <About />
+      <main>
+        <About />
+      </main>
     </>
   );
 }
