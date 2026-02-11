@@ -59,12 +59,12 @@ export default function About() {
   return (
     <section
       id="about"
-      className="bg-zinc-900 min-h-screen w-full relative overflow-hidden flex items-center justify-center py-12"
+      className="bg-zinc-950 min-h-screen w-full relative overflow-hidden flex items-center justify-center py-12"
     >
       {/* Background Blobs */}
-      <div className="absolute top-0 -left-20 w-72 h-72 bg-purple-500/10  rounded-full blur-[120px] pointer-events-none"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-emerald-500/20 rounded-full blur-[150px] pointer-events-none"></div>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+      <div className="absolute -top-10 -right-20 w-96 h-96 bg-purple-500/30  rounded-full blur-[180px] pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-500/30 rounded-full blur-[150px] pointer-events-none"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-cyan-500/30 rounded-full blur-[100px] pointer-events-none"></div>
       <div className="relative z-10 grid grid-cols-1 w-full md:grid-cols-3 max-w-7xl py-12 mx-auto px-6 gap-6 text-white">
         {/* About Me */}
         <div className="border bg-white/2 backdrop-blur-md border-white/10 shadow-2xl rounded-xl p-5 flex items-start flex-col gap-4 md:col-span-3">

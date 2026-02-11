@@ -4,7 +4,10 @@ import BackgroundBlobs from './BackgroundBlobs';
 
 export default function Header() {
   return (
-    <header className="relative bg-zinc-950 min-h-screen overflow-hidden">
+    <header
+      id="home"
+      className="relative bg-zinc-950 min-h-screen overflow-hidden"
+    >
       <BackgroundBlobs />
 
       <div

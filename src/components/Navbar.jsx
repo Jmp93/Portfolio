@@ -46,7 +46,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-100 transition-all duration-300 ${
         isScrolled
           ? 'bg-black/40 backdrop-blur-md border-b border-white/10 h-16'
           : 'bg-transparent h-24'
@@ -62,7 +62,9 @@ export default function Navbar() {
           whileHover={{ scale: 1.05 }}
           className="font-space font-bold text-white text-2xl cursor-pointer"
         >
-          JMP<span className="text-cyan-400">.</span>DEV
+          <a href="#home">
+            JMP<span className="text-cyan-400">.</span>DEV
+          </a>
         </motion.h2>
 
         <div className="hidden md:flex items-center gap-10">
