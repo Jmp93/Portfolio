@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <header
       id="home"
-      className="relative bg-zinc-950 min-h-screen overflow-hidden"
+      className="relative  overflow-hidden  bg-zinc-950 min-h-screen"
     >
       <BackgroundBlobs />
 

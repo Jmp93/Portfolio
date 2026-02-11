@@ -1,4 +1,5 @@
 import { Icons } from './Icons';
+import BackgroundBlobs from './BackgroundBlobs';
 
 const techStack = [
   {
@@ -72,9 +73,9 @@ export default function About() {
       id="about"
       className="bg-zinc-950 min-h-screen w-full relative overflow-hidden flex items-center justify-center py-12"
     >
-      <div className="absolute -top-10 -right-20 w-96 h-96 bg-purple-500/30 rounded-full blur-[180px] pointer-events-none"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-500/30 rounded-full blur-[150px] pointer-events-none"></div>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-cyan-500/30 rounded-full blur-[100px] pointer-events-none"></div>
+      {/* <div className="absolute -top-15 -right-[5%] w-150 h-150 bg-purple-500/20 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute -bottom-15 -left-[5%] pointer-events-none w-150 h-150 bg-cyan-500/20 rounded-full blur-[120px]"></div> */}
+      <BackgroundBlobs />
 
       <div className="relative z-10 grid grid-cols-1 w-full md:grid-cols-3 max-w-7xl py-12 mx-auto px-6 gap-6 text-white">
         <div className="border bg-white/2 backdrop-blur-md border-white/10 shadow-2xl rounded-xl p-5 flex items-start flex-col gap-4 md:col-span-3">
@@ -108,7 +109,7 @@ export default function About() {
                 <img
                   src={tech.src}
                   alt={tech.name}
-                  className={`w-12 h-12 md:w-16 md:h-16 object-contain filter grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 ${tech.hoverColor}`}
+                  className={`w-12 h-12 md:w-16 md:h-16 object-contain filter  grayscale opacity-75 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 ${tech.hoverColor}`}
                 />
                 <span className="text-xs font-medium text-zinc-300 group-hover:text-white transition-colors">
                   {tech.name}
