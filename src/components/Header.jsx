@@ -73,7 +73,7 @@ export default function Header() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.1 }}
-            className="text-zinc-400 text-lg md:text-xl max-w-lg leading-relaxed mb-10 mx-auto [@media(min-width:1085px)]:mx-0"
+            className="text-zinc-400 text-lg md:text-xl max-w-lg leading-relaxed  mx-auto [@media(min-width:1085px)]:mx-0"
           >
             I craft responsive, high-performance web experiences using modern
             technologies and creative design principles.
