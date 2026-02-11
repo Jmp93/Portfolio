@@ -22,35 +22,33 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Manual scroll handler to prevent the "20px nudge" or "stuck" bugs
-  const handleNavClick = (e, href) => {
-    e.preventDefault();
-    const targetId = href.replace('#', '');
-    const elem = document.getElementById(targetId);
-
-    if (elem) {
-      // Offset for the fixed header height (h-16 = 64px)
-      const offset = 64;
-      const elementPosition = elem.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      });
-    }
-
-    // Close mobile menu after triggering scroll
+  useEffect(() => {
+    const handleClickOutside = event => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
     if (isOpen) {
-      setTimeout(() => setIsOpen(false), 150);
+      document.addEventListener('mousedown', handleClickOutside);
     }
-  };
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen]);
 
   const navLinks = [
     { name: 'About', href: '#about' },
     { name: 'Projects', href: '#projects' },
     { name: 'Contact', href: '#contact' },
   ];
+
+  const handleNavClick = () => {
+    if (isOpen) {
+      setTimeout(() => {
+        setIsOpen(false);
+      }, 300);
+    }
+  };
 
   return (
     <nav
@@ -70,7 +68,7 @@ export default function Navbar() {
           whileHover={{ scale: 1.05 }}
           className="font-space font-bold text-white text-2xl cursor-pointer"
         >
-          <a href="#home" onClick={e => handleNavClick(e, '#home')}>
+          <a href="#home" onClick={handleNavClick}>
             JMP<span className="text-cyan-400">.</span>DEV
           </a>
         </motion.h2>
@@ -81,7 +79,6 @@ export default function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              onClick={e => handleNavClick(e, link.href)}
               className="relative text-sm font-medium text-zinc-300 hover:text-white transition-colors group"
             >
               {link.name}
@@ -123,7 +120,7 @@ export default function Navbar() {
                     <motion.a
                       key={link.name}
                       href={link.href}
-                      onClick={e => handleNavClick(e, link.href)}
+                      onClick={handleNavClick}
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: i * 0.1 }}
