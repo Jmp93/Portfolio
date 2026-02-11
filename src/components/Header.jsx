@@ -14,13 +14,11 @@ export default function Header() {
                 px-6 pt-32 pb-20 lg:pt-0 lg:pb-0 gap-12 lg:gap-24"
       >
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.4 }}
           className="w-full flex justify-center [@media(min-width:1085px)]:w-auto accelerate"
         >
-          {/* Updated Wrapper in Header.jsx */}
-          {/* The "Golden Ratio" Wrapper */}
           <div className="w-full max-w-md lg:max-w-none lg:w-112.5 lg:shrink-0 mx-auto lg:mx-0">
             <CodeSnippet />
           </div>
@@ -28,7 +26,6 @@ export default function Header() {
 
         <div className="w-full [@media(min-width:1085px)]:flex-1 flex flex-col items-center [@media(min-width:1085px)]:items-start text-center [@media(min-width:1085px)]:text-left text-white">
           <h1 className="font-space text-5xl md:text-7xl font-bold leading-tight mb-6">
-            {/* The static part of your heading */}
             <motion.span
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
@@ -38,7 +35,6 @@ export default function Header() {
               Building the
             </motion.span>
 
-            {/* The animated gradient span */}
             <motion.span
               initial={{
                 maskImage:
@@ -73,7 +69,7 @@ export default function Header() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.1 }}
-            className="text-zinc-400 text-lg md:text-xl max-w-lg leading-relaxed  mx-auto [@media(min-width:1085px)]:mx-0"
+            className="text-zinc-400 text-lg md:text-xl max-w-lg leading-relaxed mb-10 mx-auto [@media(min-width:1085px)]:mx-0"
           >
             I craft responsive, high-performance web experiences using modern
             technologies and creative design principles.
@@ -83,11 +79,21 @@ export default function Header() {
             <motion.a
               href="#work"
               initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              whileHover={{ y: -8, scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-              transition={{ duration: 1.2, delay: 0.3, ease: 'easeOut' }}
-              className="group flex-1 w-48 text-center min-w-40 max-w-50 flex items-center gap-2 text-black bg-white px-8 py-4 font-bold rounded-lg cursor-pointer sm:w-48 hover:bg-cyan-400 transition-colors duration-200"
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: { duration: 1.2, delay: 0.3, ease: 'easeOut' },
+              }}
+              whileHover={{
+                y: -8,
+                scale: 1.05,
+                transition: { duration: 0.2, ease: 'easeInOut' },
+              }}
+              whileTap={{
+                scale: 0.95,
+                transition: { duration: 0.1 },
+              }}
+              className="group w-48 text-center flex items-center justify-center gap-2 text-black bg-white px-8 py-4 font-bold rounded-lg cursor-pointer hover:bg-cyan-400 transition-colors duration-200"
             >
               <span>View Work</span>
               <motion.span
@@ -104,11 +110,21 @@ export default function Header() {
             <motion.a
               href="#contact"
               initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              whileHover={{ y: -8, scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-              transition={{ duration: 1.2, delay: 0.3, ease: 'easeOut' }}
-              className="bg-white/10  w-48 text-center flex-1 min-w-40 max-w-50 px-8 py-4 font-bold rounded-lg border border-white/10 cursor-pointer  hover:bg-white/20 transition-colors duration-200 accelerate"
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: { duration: 1.2, delay: 0.4, ease: 'easeOut' },
+              }}
+              whileHover={{
+                y: -8,
+                scale: 1.05,
+                transition: { duration: 0.2, ease: 'easeInOut' },
+              }}
+              whileTap={{
+                scale: 0.95,
+                transition: { duration: 0.1 },
+              }}
+              className="bg-white/10 w-48 text-center px-8 py-4 font-bold rounded-lg border border-white/10 cursor-pointer hover:bg-white/20 transition-colors duration-200 accelerate"
             >
               Contact Me
             </motion.a>
