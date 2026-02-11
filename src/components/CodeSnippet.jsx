@@ -7,7 +7,7 @@ export default function CodeSnippet() {
       whileHover={{ skewY: 0, rotateX: 0 }}
       transition={{ type: 'spring', stiffness: 100 }}
       style={{ perspective: 1000 }}
-      className="backdrop-blur-md bg-white/5 border border-white/15 rounded-2xl p-8 shadow-2xl min-w-115 w-full max-w-md font-mono"
+      className="w-full backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-5 md:p-8 lg:p-12 shadow-2xl font-mono"
     >
       {/* Mac Window Dots */}
       <div className="flex gap-1.5 mb-6">
