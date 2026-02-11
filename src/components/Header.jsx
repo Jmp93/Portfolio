@@ -11,7 +11,7 @@ export default function Header() {
         className="relative z-10 flex flex-col lg:flex-row-reverse items-center 
                 justify-start lg:justify-center 
                 min-h-screen max-w-7xl mx-auto w-full 
-                px-6 pt-32 pb-20 lg:pt-0 lg:pb-0 gap-12 lg:gap-24"
+                px-6 pt-50 pb-20 lg:pt-0 lg:pb-0 gap-12 lg:gap-24"
       >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
