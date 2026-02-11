@@ -67,7 +67,7 @@ export default function About() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none"></div>
       <div className="relative z-10 grid grid-cols-1 w-full md:grid-cols-3 max-w-7xl py-12 mx-auto px-6 gap-6 text-white">
         {/* About Me */}
-        <div className="border bg-white/2 backdrop-blur-md border-white/10 shadow-2xl rounded-xl p-6 flex items-start flex-col gap-4 md:col-span-3">
+        <div className="border bg-white/2 backdrop-blur-md border-white/10 shadow-2xl rounded-xl p-5 flex items-start flex-col gap-4 md:col-span-3">
           <h4 className="border border-emerald-400/30 bg-emerald-400/10 text-emerald-300 rounded-full py-1.5 px-4 uppercase text-xs font-bold tracking-wide">
             About Me
           </h4>
