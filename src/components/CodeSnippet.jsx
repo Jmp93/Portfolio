@@ -15,7 +15,7 @@ export default function CodeSnippet() {
       </div>
 
       <code className="text-sm text-cyan-300 leading-relaxed">
-        <span className="text-purple-400">const</span> developer = {'{'}
+        <span className="text-purple-300">const</span> developer = {'{'}
         <br />
         &nbsp;&nbsp;name: <span className="text-yellow-200">"James"</span>,
         <br />

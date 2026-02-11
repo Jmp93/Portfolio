@@ -81,12 +81,12 @@ export default function About() {
           <p className="border border-emerald-400/30 bg-emerald-400/10 text-emerald-300 rounded-full py-1.5 px-4 uppercase text-xs font-bold tracking-wide">
             About Me
           </p>
-          <h3 className="text-3xl md:text-5xl font-bold leading-snug font-space">
+          <h2 className="text-3xl md:text-5xl font-bold leading-snug font-space">
             Passionate about crafting{' '}
             <span className="bg-hero-gradient bg-clip-text text-transparent block">
               digital experiences.
             </span>
-          </h3>
+          </h2>
           <p className="text-zinc-400 text-sm md:text-xl max-w-lg md:max-w-xl leading-relaxed">
             I'm a creative developer who loves turning ideas into polished,
             responsive web experiences. With a focus on clean code and
@@ -95,8 +95,8 @@ export default function About() {
           </p>
         </div>
 
-        <div className="border bg-white/2 backdrop-blur-md border-white/10 shadow-2xl rounded-xl p-6 flex items-start flex-col gap-4 md:col-span-2">
-          <h4 className="text-zinc-500 text-xs uppercase tracking-widest mb-10 font-bold">
+        <div className="border bg-white/5 backdrop-blur-md border-white/15 shadow-2xl rounded-xl p-6 flex items-start flex-col gap-4 md:col-span-2">
+          <h4 className="text-zinc-300 text-xs uppercase tracking-widest mb-10 font-bold">
             Tech Stack
           </h4>
           <div className="grid grid-cols-3 gap-y-10 w-full">
@@ -110,7 +110,7 @@ export default function About() {
                   alt={tech.name}
                   className={`w-12 h-12 md:w-16 md:h-16 object-contain filter grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 ${tech.hoverColor}`}
                 />
-                <span className="text-xs font-medium text-zinc-400 group-hover:text-white transition-colors">
+                <span className="text-xs font-medium text-zinc-300 group-hover:text-white transition-colors">
                   {tech.name}
                 </span>
               </div>
@@ -118,7 +118,7 @@ export default function About() {
           </div>
         </div>
 
-        <div className="border bg-white/2 backdrop-blur-md border-white/10 shadow-2xl rounded-xl p-6 flex items-start flex-col gap-4">
+        <div className="border bg-white/5 backdrop-blur-md border-white/15 shadow-2xl rounded-xl p-6 flex items-start flex-col gap-4">
           <h4 className="text-zinc-300 text-xs uppercase tracking-widest mb-10 font-bold">
             Currently Exploring
           </h4>
@@ -133,7 +133,7 @@ export default function About() {
                   alt={tech.name}
                   className={`w-12 h-12 md:w-16 md:h-16 object-contain filter grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 ${tech.hoverColor}`}
                 />
-                <span className="text-xs font-medium text-zinc-400 group-hover:text-white transition-colors">
+                <span className="text-xs font-medium text-zinc-300 group-hover:text-white transition-colors">
                   {tech.name}
                 </span>
               </div>
