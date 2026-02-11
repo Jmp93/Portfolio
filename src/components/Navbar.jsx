@@ -42,11 +42,23 @@ export default function Navbar() {
     { name: 'Contact', href: '#contact' },
   ];
 
-  const handleNavClick = () => {
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+
+    const targetId = href.replace('#', '');
+    const elem = document.getElementById(targetId);
+
+    if (elem) {
+      elem.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+
     if (isOpen) {
       setTimeout(() => {
         setIsOpen(false);
-      }, 300);
+      }, 150);
     }
   };
 
@@ -68,7 +80,7 @@ export default function Navbar() {
           whileHover={{ scale: 1.05 }}
           className="font-space font-bold text-white text-2xl cursor-pointer"
         >
-          <a href="#home" onClick={handleNavClick}>
+          <a href="#home" onClick={e => handleNavClick(e, '#home')}>
             JMP<span className="text-cyan-400">.</span>DEV
           </a>
         </motion.h2>
@@ -80,6 +92,7 @@ export default function Navbar() {
               key={link.name}
               href={link.href}
               className="relative text-sm font-medium text-zinc-300 hover:text-white transition-colors group"
+              onClick={e => handleNavClick(e, link.href)}
             >
               {link.name}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full" />
@@ -120,7 +133,7 @@ export default function Navbar() {
                     <motion.a
                       key={link.name}
                       href={link.href}
-                      onClick={handleNavClick}
+                      onClick={e => handleNavClick(e, link.href)}
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: i * 0.1 }}
