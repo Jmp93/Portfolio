@@ -28,11 +28,9 @@ export default function Navbar() {
         setIsOpen(false);
       }
     };
-
     if (isOpen) {
       document.addEventListener('mousedown', handleClickOutside);
     }
-
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
@@ -43,6 +41,15 @@ export default function Navbar() {
     { name: 'Projects', href: '#projects' },
     { name: 'Contact', href: '#contact' },
   ];
+
+  // Helper to handle mobile navigation delay
+  const handleMobileNav = (e, href) => {
+    // We let the default anchor behavior start,
+    // but wait a split second before closing the menu
+    setTimeout(() => {
+      setIsOpen(false);
+    }, 150);
+  };
 
   return (
     <nav
@@ -67,6 +74,7 @@ export default function Navbar() {
           </a>
         </motion.h2>
 
+        {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-10">
           {navLinks.map(link => (
             <a
@@ -80,11 +88,12 @@ export default function Navbar() {
           ))}
         </div>
 
+        {/* Mobile Nav Toggle */}
         <div ref={menuRef} className="md:hidden flex items-center">
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="text-white p-2 cursor-pointer"
-            aria-label="Open navigation menu"
+            aria-label="Toggle navigation menu"
           >
             <div className="w-6 h-5 flex flex-col justify-between items-end">
               <span
@@ -106,7 +115,7 @@ export default function Navbar() {
                 animate={{ opacity: 1, height: 'auto' }}
                 exit={{ opacity: 0, height: 0 }}
                 transition={{ duration: 0.3, ease: 'easeInOut' }}
-                className="absolute text-center top-full left-0 right-0 bg-zinc-950/90 backdrop-blur-xl border-b border-white/10 overflow-hidden"
+                className="absolute text-center top-full left-0 right-0 bg-zinc-950/95 backdrop-blur-xl border-b border-white/10 overflow-hidden"
               >
                 <div className="flex flex-col gap-8 p-8">
                   {navLinks.map((link, i) => (
@@ -116,7 +125,7 @@ export default function Navbar() {
                       transition={{ delay: i * 0.1 }}
                       key={link.name}
                       href={link.href}
-                      onClick={() => setIsOpen(false)}
+                      onClick={e => handleMobileNav(e, link.href)}
                       className="text-2xl font-semibold text-white hover:text-cyan-400 transition-colors"
                     >
                       {link.name}
