@@ -96,9 +96,9 @@ export default function About() {
         </div>
 
         <div className="border bg-white/5 backdrop-blur-md border-white/15 shadow-2xl rounded-xl p-6 flex items-start flex-col gap-4 md:col-span-2">
-          <h4 className="text-zinc-300 text-xs uppercase tracking-widest mb-10 font-bold">
+          <h3 className="text-zinc-300 text-xs uppercase tracking-widest mb-10 font-bold">
             Tech Stack
-          </h4>
+          </h3>
           <div className="grid grid-cols-3 gap-y-10 w-full">
             {techStack.map((tech, index) => (
               <div
@@ -119,9 +119,9 @@ export default function About() {
         </div>
 
         <div className="border bg-white/5 backdrop-blur-md border-white/15 shadow-2xl rounded-xl p-6 flex items-start flex-col gap-4">
-          <h4 className="text-zinc-300 text-xs uppercase tracking-widest mb-10 font-bold">
+          <h3 className="text-zinc-300 text-xs uppercase tracking-widest mb-10 font-bold">
             Currently Exploring
-          </h4>
+          </h3>
           <div className="grid grid-cols-3 md:grid-cols-1 items-center gap-y-10 w-full">
             {exploringStack.map((tech, index) => (
               <div
