@@ -22,34 +22,35 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    const handleClickOutside = event => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setIsOpen(false);
-      }
-    };
-    if (isOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
+  // Manual scroll handler to prevent the "20px nudge" or "stuck" bugs
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    const targetId = href.replace('#', '');
+    const elem = document.getElementById(targetId);
+
+    if (elem) {
+      // Offset for the fixed header height (h-16 = 64px)
+      const offset = 64;
+      const elementPosition = elem.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
     }
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [isOpen]);
+
+    // Close mobile menu after triggering scroll
+    if (isOpen) {
+      setTimeout(() => setIsOpen(false), 150);
+    }
+  };
 
   const navLinks = [
     { name: 'About', href: '#about' },
     { name: 'Projects', href: '#projects' },
     { name: 'Contact', href: '#contact' },
   ];
-
-  // Helper to handle mobile navigation delay
-  const handleMobileNav = (e, href) => {
-    // We let the default anchor behavior start,
-    // but wait a split second before closing the menu
-    setTimeout(() => {
-      setIsOpen(false);
-    }, 150);
-  };
 
   return (
     <nav
@@ -69,7 +70,7 @@ export default function Navbar() {
           whileHover={{ scale: 1.05 }}
           className="font-space font-bold text-white text-2xl cursor-pointer"
         >
-          <a href="#home">
+          <a href="#home" onClick={e => handleNavClick(e, '#home')}>
             JMP<span className="text-cyan-400">.</span>DEV
           </a>
         </motion.h2>
@@ -80,6 +81,7 @@ export default function Navbar() {
             <a
               key={link.name}
               href={link.href}
+              onClick={e => handleNavClick(e, link.href)}
               className="relative text-sm font-medium text-zinc-300 hover:text-white transition-colors group"
             >
               {link.name}
@@ -88,7 +90,7 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Mobile Nav Toggle */}
+        {/* Mobile Toggle & Menu */}
         <div ref={menuRef} className="md:hidden flex items-center">
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -114,18 +116,17 @@ export default function Navbar() {
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: 'auto' }}
                 exit={{ opacity: 0, height: 0 }}
-                transition={{ duration: 0.3, ease: 'easeInOut' }}
                 className="absolute text-center top-full left-0 right-0 bg-zinc-950/95 backdrop-blur-xl border-b border-white/10 overflow-hidden"
               >
                 <div className="flex flex-col gap-8 p-8">
                   {navLinks.map((link, i) => (
                     <motion.a
+                      key={link.name}
+                      href={link.href}
+                      onClick={e => handleNavClick(e, link.href)}
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: i * 0.1 }}
-                      key={link.name}
-                      href={link.href}
-                      onClick={e => handleMobileNav(e, link.href)}
                       className="text-2xl font-semibold text-white hover:text-cyan-400 transition-colors"
                     >
                       {link.name}
