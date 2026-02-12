@@ -6,7 +6,7 @@ export default function CodeSnippet() {
       initial={{ skewY: 4 }}
       whileHover={{ skewY: 0 }}
       transition={{ type: 'tween', duration: 0.4, ease: 'circOut' }}
-      className="w-full backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-5 md:p-8 lg:p-12 shadow-2xl font-mono"
+      className="w-full backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-5 lg:px-8 md:py-6 shadow-2xl font-mono"
     >
       <div className="flex gap-1.5 mb-6">
         <div className="w-3 h-3 rounded-full bg-red-500"></div>
