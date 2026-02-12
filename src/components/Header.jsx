@@ -77,7 +77,7 @@ export default function Header() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 w-fit max-w-sm mx-auto lg:mx-0 mt-10">
             <motion.a
-              href="#work"
+              href="#portfolio"
               initial={{ opacity: 0, y: 15 }}
               animate={{
                 opacity: 1,
