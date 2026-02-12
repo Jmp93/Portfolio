@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import CodeSnippet from './CodeSnippet';
-import BackgroundBlobs from './BackgroundBlobs';
 
 export default function Header() {
   return (
@@ -8,8 +7,6 @@ export default function Header() {
       id="home"
       className="relative  overflow-hidden  bg-zinc-950 min-h-screen"
     >
-      <BackgroundBlobs />
-
       <div
         className="relative z-10 flex flex-col lg:flex-row-reverse items-center 
                 justify-start lg:justify-center 

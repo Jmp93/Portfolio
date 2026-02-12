@@ -1,70 +1,48 @@
-import { Icons } from './Icons';
-import BackgroundBlobs from './BackgroundBlobs';
+import {
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiReact,
+  SiTailwindcss,
+  SiFigma,
+  SiGithub,
+  SiNetlify,
+  SiTypescript,
+  SiNextdotjs,
+  SiAstro,
+} from 'react-icons/si';
+
+// The one custom icon React Icons misses
+const MotionIcon = props => (
+  <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+    <path d="M0 0l12 12L0 24V0zm12 12l12 12H0l12-12zm0 0L24 0v24L12 12z" />
+  </svg>
+);
 
 const techStack = [
+  { name: 'HTML', Icon: SiHtml5, hoverColor: 'hover:text-[#E34F26]' },
+  { name: 'CSS', Icon: SiCss3, hoverColor: 'hover:text-[#1572B6]' },
   {
-    name: 'HTML',
-    src: Icons.Html,
-    hoverColor: 'group-hover:drop-shadow-[0_0_15px_rgba(227,79,38,0.5)]',
+    name: 'JavaScript',
+    Icon: SiJavascript,
+    hoverColor: 'hover:text-[#F7DF1E]',
   },
-  {
-    name: 'CSS',
-    src: Icons.Css,
-    hoverColor: 'group-hover:drop-shadow-[0_0_15px_rgba(21,114,182,0.5)]',
-  },
-  {
-    name: 'JS',
-    src: Icons.Js,
-    hoverColor: 'group-hover:drop-shadow-[0_0_15px_rgba(247,223,30,0.5)]',
-  },
-  {
-    name: 'React',
-    src: Icons.React,
-    hoverColor: 'group-hover:drop-shadow-[0_0_15px_rgba(97,218,251,0.5)]',
-  },
-  {
-    name: 'Tailwind',
-    src: Icons.Tailwind,
-    hoverColor: 'group-hover:drop-shadow-[0_0_15px_rgba(6,182,212,0.5)]',
-  },
-  {
-    name: 'Figma',
-    src: Icons.Figma,
-    hoverColor: 'group-hover:drop-shadow-[0_0_15px_rgba(242,78,30,0.5)]',
-  },
-  {
-    name: 'Git',
-    src: Icons.Github,
-    hoverColor: 'group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]',
-  },
-  {
-    name: 'Motion',
-    src: Icons.Motion,
-    hoverColor: 'group-hover:drop-shadow-[0_0_15px_rgba(187,68,255,0.5)]',
-  },
-  {
-    name: 'Netlify',
-    src: Icons.Netlify,
-    hoverColor: 'group-hover:drop-shadow-[0_0_15px_rgba(0,173,159,0.5)]',
-  },
+  { name: 'React', Icon: SiReact, hoverColor: 'hover:text-[#61DAFB]' },
+  { name: 'Tailwind', Icon: SiTailwindcss, hoverColor: 'hover:text-[#06B6D4]' },
+  { name: 'Figma', Icon: SiFigma, hoverColor: 'hover:text-[#F24E1E]' },
+  { name: 'Git', Icon: SiGithub, hoverColor: 'hover:text-[#F05032]' },
+  { name: 'Motion', Icon: MotionIcon, hoverColor: 'hover:text-[#BB44FF]' },
+  { name: 'Netlify', Icon: SiNetlify, hoverColor: 'hover:text-[#00AD9F]' },
 ];
 
 const exploringStack = [
   {
     name: 'TypeScript',
-    src: Icons.Typescript,
-    hoverColor: 'group-hover:drop-shadow-[0_0_15px_rgba(49,120,198,0.5)]',
+    Icon: SiTypescript,
+    hoverColor: 'hover:text-[#3178C6]',
   },
-  {
-    name: 'Next.js',
-    src: Icons.Next,
-    hoverColor: 'group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]',
-  },
-  {
-    name: 'Astro',
-    src: Icons.Astro,
-    hoverColor: 'group-hover:drop-shadow-[0_0_15px_rgba(255,93,1,0.5)]',
-  },
+  { name: 'Next.js', Icon: SiNextdotjs, hoverColor: 'hover:text-[#ffffff]' },
+  { name: 'Astro', Icon: SiAstro, hoverColor: 'hover:text-[#FF5D01]' },
 ];
 
 export default function About() {
@@ -73,10 +51,6 @@ export default function About() {
       id="about"
       className="bg-zinc-950 min-h-screen w-full relative overflow-hidden flex items-center justify-center py-12"
     >
-      {/* <div className="absolute -top-15 -right-[5%] w-150 h-150 bg-purple-500/20 rounded-full blur-[120px] pointer-events-none"></div>
-      <div className="absolute -bottom-15 -left-[5%] pointer-events-none w-150 h-150 bg-cyan-500/20 rounded-full blur-[120px]"></div> */}
-      <BackgroundBlobs />
-
       <div className="relative z-10 grid grid-cols-1 w-full md:grid-cols-3 max-w-7xl py-12 mx-auto px-6 gap-6 text-white">
         <div className="border bg-white/2 backdrop-blur-md border-white/10 shadow-2xl rounded-xl p-5 flex items-start flex-col gap-4 md:col-span-3">
           <p className="border border-emerald-400/30 bg-emerald-400/10 text-emerald-300 rounded-full py-1.5 px-4 uppercase text-xs font-bold tracking-wide">
@@ -104,14 +78,10 @@ export default function About() {
             {techStack.map((tech, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center gap-3 group"
+                className={`flex flex-col items-center gap-3 transition-colors duration-300 text-zinc-500 ${tech.hoverColor}`}
               >
-                <img
-                  src={tech.src}
-                  alt={tech.name}
-                  className={`w-12 h-12 md:w-16 md:h-16 object-contain filter  grayscale opacity-75 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 ${tech.hoverColor}`}
-                />
-                <span className="text-xs font-medium text-zinc-300 group-hover:text-white transition-colors">
+                <tech.Icon className="w-12 h-12 md:w-16 md:h-16" />
+                <span className="text-xs font-medium text-zinc-300">
                   {tech.name}
                 </span>
               </div>
@@ -127,14 +97,10 @@ export default function About() {
             {exploringStack.map((tech, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center gap-3 group"
+                className={`flex flex-col items-center gap-3 transition-colors duration-300 text-zinc-500 ${tech.hoverColor}`}
               >
-                <img
-                  src={tech.src}
-                  alt={tech.name}
-                  className={`w-12 h-12 md:w-16 md:h-16 object-contain filter grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 ${tech.hoverColor}`}
-                />
-                <span className="text-xs font-medium text-zinc-300 group-hover:text-white transition-colors">
+                <tech.Icon className="w-12 h-12 md:w-16 md:h-16" />
+                <span className="text-xs font-medium text-zinc-300">
                   {tech.name}
                 </span>
               </div>
