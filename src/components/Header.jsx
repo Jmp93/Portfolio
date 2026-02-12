@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <header
       id="home"
-      className="relative  overflow-hidden  bg-zinc-950 min-h-screen"
+      className="relative border-t-4 border-solid border-cyan-400/70 overflow-hidden  bg-zinc-950 min-h-screen"
     >
       <div
         className="relative z-10 flex flex-col lg:flex-row-reverse items-center 

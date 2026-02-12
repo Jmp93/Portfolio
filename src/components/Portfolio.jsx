@@ -4,10 +4,10 @@ export default function Portfolio() {
   return (
     <section
       id="portfolio"
-      className="bg-zinc-950 border-t-4 border-solid border-cyan-400/70 w-full relative overflow-hidden flex items-center justify-center py-12"
+      className="bg-zinc-950 border-t-4 border-solid border-cyan-400/30 w-full relative overflow-hidden flex items-center justify-center py-12"
     >
       <div className="relative z-10 grid grid-cols-1 w-full md:grid-cols-3 max-w-7xl py-12 mx-auto px-6 gap-8 text-white">
-        <div className="md:col-span-3 border bg-white/2 backdrop-blur-md border-white/10 shadow-2xl rounded-2xl p-8 md:p-12 flex items-start flex-col gap-6 mb-4">
+        <div className="md:col-span-3 border bg-white/2 backdrop-blur-md border-white/10 shadow-2xl rounded-2xl p-8 md:p-12 flex items-start md:items-center md:text-center flex-col gap-6 mb-4">
           <p className="border border-emerald-400/30 bg-emerald-400/10 text-emerald-300 rounded-full py-1.5 px-4 uppercase text-xs font-bold tracking-widest">
             Portfolio
           </p>
