@@ -25,7 +25,4 @@ section[id] {
     var(--color-brand-primary),
     var(--color-brand-secondary)
   );
-
-  /* Hero Background */
-  --background-image-hero-pattern: url('./assets/hero-bg.png');
 }

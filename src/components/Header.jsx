@@ -1,12 +1,10 @@
 import { motion } from 'framer-motion';
 import CodeSnippet from './CodeSnippet';
+import { SiGithub, SiLinkedin } from 'react-icons/si';
 
 export default function Header() {
   return (
-    <header
-      id="home"
-      className="relative border-t-4 border-solid border-cyan-400/70 overflow-hidden  bg-zinc-950 min-h-screen"
-    >
+    <header id="home" className="relative bg-zinc-950 min-h-screen">
       <div
         className="relative z-10 flex flex-col lg:flex-row-reverse items-center 
                 justify-start lg:justify-center 
@@ -75,59 +73,42 @@ export default function Header() {
             technologies and creative design principles.
           </motion.p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 w-fit max-w-sm mx-auto lg:mx-0 mt-10">
+          <div className="flex flex-col gap-8 sm:flex-row items-center justify-center lg:justify-start w-fit max-w-sm mx-auto lg:mx-0 mt-10">
             <motion.a
               href="#portfolio"
-              initial={{ opacity: 0, y: 15 }}
-              animate={{
-                opacity: 1,
-                y: 0,
-                transition: { duration: 1.2, delay: 0.3, ease: 'easeOut' },
-              }}
+              className="group w-48 text-center flex items-center justify-center gap-2  text-black bg-white px-8 py-4 font-bold rounded-lg cursor-pointer hover:bg-cyan-400 "
               whileHover={{
-                y: -8,
-                scale: 1.05,
-                transition: { duration: 0.2, ease: 'easeInOut' },
+                scale: 1.1,
+                x: 5,
               }}
-              whileTap={{
-                scale: 0.95,
-                transition: { duration: 0.1 },
-              }}
-              className="group w-48 text-center flex items-center justify-center gap-2 text-black bg-white px-8 py-4 font-bold rounded-lg cursor-pointer hover:bg-cyan-400 transition-colors duration-200"
+              transition={{ type: 'spring', stiffness: 200 }}
             >
               <span>View Work</span>
-              <motion.span
-                className="inline-block"
-                variants={{
-                  initial: { x: 0 },
-                  whileHover: { x: 6 },
-                }}
+              <span className="inline-block">→</span>
+            </motion.a>
+            <div className="flex gap-4">
+              <motion.a
+                href="https://github.com/Jmp93"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-4 bg-zinc-900 text-white rounded-lg border border-zinc-800 hover:border-cyan-400 hover:text-cyan-400"
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.9 }}
               >
-                →
-              </motion.span>
-            </motion.a>
+                <SiGithub size={24} />
+              </motion.a>
 
-            <motion.a
-              href="#contact"
-              initial={{ opacity: 0, y: 15 }}
-              animate={{
-                opacity: 1,
-                y: 0,
-                transition: { duration: 1.2, delay: 0.4, ease: 'easeOut' },
-              }}
-              whileHover={{
-                y: -8,
-                scale: 1.05,
-                transition: { duration: 0.2, ease: 'easeInOut' },
-              }}
-              whileTap={{
-                scale: 0.95,
-                transition: { duration: 0.1 },
-              }}
-              className="bg-white/10 w-48 text-center px-8 py-4 font-bold rounded-lg border border-white/10 cursor-pointer hover:bg-white/20 transition-colors duration-200 accelerate"
-            >
-              Contact Me
-            </motion.a>
+              <motion.a
+                href="https://linkedin.com/in/james-pointer-508143161/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-4 bg-zinc-900 text-white rounded-lg border border-zinc-800 hover:border-cyan-400 hover:text-cyan-400"
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <SiLinkedin size={24} />
+              </motion.a>
+            </div>
           </div>
         </div>
       </div>

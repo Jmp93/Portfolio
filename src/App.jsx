@@ -7,9 +7,11 @@ import BackgroundBlobs from './components/BackgroundBlobs';
 function App() {
   return (
     <>
-      <BackgroundBlobs />
       <Navbar />
+
       <Header />
+      <BackgroundBlobs />
+
       <main>
         <About />
         <Portfolio />

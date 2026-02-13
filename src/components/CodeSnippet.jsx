@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 export default function CodeSnippet() {
   return (
     <motion.div
-      initial={{ skewY: 4 }}
-      whileHover={{ skewY: 0 }}
+      initial={{ skewY: 0 }}
+      whileHover={{ skewY: 4 }}
       transition={{ type: 'tween', duration: 0.4, ease: 'circOut' }}
       className="w-full backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-5 lg:px-8 md:py-6 shadow-2xl font-mono"
     >

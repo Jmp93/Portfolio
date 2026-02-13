@@ -1,6 +1,6 @@
 export default function BackgroundBlobs() {
   return (
-    <div className="fixed inset-0 -z-10 pointer-events-none overflow-hidden will-change-transform">
+    <div className="fixed inset-0  pointer-events-none overflow-hidden will-change-transform">
       {/* Top Left Blob  */}
       <div className="absolute -top-15 -left-[5%] w-150 h-150 bg-cyan-500/20 rounded-full blur-[120px]" />
 
