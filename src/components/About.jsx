@@ -49,9 +49,9 @@ export default function About() {
   return (
     <section
       id="about"
-      className="bg-zinc-950 min-h-screen  w-full relative overflow-hidden flex items-center justify-center py-12"
+      className="bg-zinc-950  w-full relative overflow-hidden flex items-center justify-center py-12 border-t border-zinc-900"
     >
-      <div className="relative  grid grid-cols-1 w-full md:grid-cols-3 max-w-7xl py-12 mx-auto px-6 gap-8 text-white">
+      <div className="relative py-12 grid grid-cols-1 w-full md:grid-cols-3 max-w-7xl mx-auto px-6 gap-8 text-white">
         <div className="border bg-white/2 backdrop-blur-md border-white/10 shadow-2xl rounded-xl p-6 md:p-12 flex items-start md:items-center md:text-center flex-col gap-6 md:col-span-3 mb-4">
           <p className="border border-emerald-400/30 bg-emerald-400/10 text-emerald-300 rounded-full py-1.5 px-4 uppercase text-xs font-bold tracking-wide">
             About Me

@@ -4,7 +4,7 @@ export default function Portfolio() {
   return (
     <section
       id="portfolio"
-      className="bg-zinc-950 w-full relative overflow-hidden flex items-center justify-center py-12"
+      className="bg-zinc-950 w-full relative overflow-hidden flex items-center justify-center py-12 border-t border-zinc-900"
     >
       <div className="relative z-10 grid grid-cols-1 w-full md:grid-cols-3 max-w-7xl py-12 mx-auto px-6 gap-8 text-white">
         <div className="md:col-span-3 border bg-white/2 backdrop-blur-md border-white/10 shadow-2xl rounded-2xl p-6 md:p-12 flex items-start md:items-center md:text-center flex-col gap-6 mb-4">
