@@ -10,6 +10,7 @@ import {
   SiTypescript,
   SiNextdotjs,
   SiAstro,
+  SiVite,
 } from 'react-icons/si';
 
 // The one custom icon React Icons misses
@@ -29,7 +30,7 @@ const techStack = [
   },
   { name: 'React', Icon: SiReact, hoverColor: 'hover:text-[#61DAFB]' },
   { name: 'Tailwind', Icon: SiTailwindcss, hoverColor: 'hover:text-[#06B6D4]' },
-  { name: 'Figma', Icon: SiFigma, hoverColor: 'hover:text-[#F24E1E]' },
+  { name: 'Vite', Icon: SiVite, hoverColor: 'hover:text-[#646CFF]' },
   { name: 'Git', Icon: SiGithub, hoverColor: 'hover:text-[#F05032]' },
   { name: 'Motion', Icon: MotionIcon, hoverColor: 'hover:text-[#BB44FF]' },
   { name: 'Netlify', Icon: SiNetlify, hoverColor: 'hover:text-[#00AD9F]' },
