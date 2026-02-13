@@ -4,7 +4,6 @@ import {
   SiJavascript,
   SiReact,
   SiTailwindcss,
-  SiFigma,
   SiGithub,
   SiNetlify,
   SiTypescript,
@@ -57,7 +56,7 @@ export default function About() {
           <p className="border border-emerald-400/30 bg-emerald-400/10 text-emerald-300 rounded-full py-1.5 px-4 uppercase text-xs font-bold tracking-wide">
             About Me
           </p>
-          <h2 className="text-3xl md:text-5xl font-bold leading-snug font-space">
+          <h2 className="text-3xl md:text-6xl font-bold leading-snug font-space">
             Passionate about crafting{' '}
             <span className="bg-hero-gradient bg-clip-text text-transparent block">
               digital experiences.

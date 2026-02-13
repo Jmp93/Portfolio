@@ -11,7 +11,7 @@ export default function Portfolio() {
           <p className="border border-emerald-400/30 bg-emerald-400/10 text-emerald-300 rounded-full py-1.5 px-4 uppercase text-xs font-bold tracking-widest">
             Portfolio
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold leading-tight font-space">
+          <h2 className="text-4xl md:text-6xl font-bold leading-tight font-space">
             Selected
             <span className="bg-hero-gradient bg-clip-text inline text-transparent">
               {' '}
